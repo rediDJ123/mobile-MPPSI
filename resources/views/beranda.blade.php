@@ -18,6 +18,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             margin-bottom: 20px;
+            position: relative; /* Untuk positioning yang lebih baik */
         }
         .berita-item img {
             width: 100%;
@@ -31,19 +32,10 @@
             margin: 0 0 10px;
             font-size: 18px;
         }
-        .berita-item .content p {
-            margin: 0;
-            color: #777;
-        }
-        .berita-item .date {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 5px 10px;
+        .berita-item .content .date {
+            margin-top: 5px;
             font-size: 12px;
-            border-radius: 5px;
+            color: #777;
         }
     </style>
 </head>
@@ -78,6 +70,7 @@
         echo '<img src="' . $item['gambar'] . '" alt="Gambar Berita">';
         echo '<div class="content">';
         echo '<h3>' . $item['judul'] . '</h3>';
+        echo '<div class="date">' . $item['tanggal'] . '</div>'; // Tambahkan tanggal di sini
         echo '</div>';
         echo '</div>';
     }
@@ -86,4 +79,5 @@
 
 </body>
 </html>
+
 </x-layout>

@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
     <nav class="bg-[#65A8C5]"  x-data="{ isOpen: false }">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -8,10 +11,10 @@
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <x-nav-link href="/beranda" :active="request()->is('beranda')">Beranda</x-nav-link>
-                <x-nav-link href="/daftar surat" :active="request()->is('daftar surat','permintaan surat')">surat</x-nav-link>
-                <x-nav-link href="/data iuran" :active="request()->is('data iuran','list iuran')">Data iuran</x-nav-link>
-                <x-nav-link href="/laporan" :active="request()->is('laporan')">Laporan</x-nav-link>
+                <x-nav-link href="/beranda" :active="request()->is('beranda')"><i class="fa fa-home" aria-hidden="true"></i>Beranda</x-nav-link>
+                <x-nav-link href="/daftar surat" :active="request()->is('daftar surat','permintaan surat')"><i class="fa fa-file-text" aria-hidden="true"></i>surat</x-nav-link>
+                <x-nav-link href="/data iuran" :active="request()->is('data iuran','list iuran')"> <i class="fa fa-usd" aria-hidden="true"></i>Data iuran</x-nav-link>
+                <x-nav-link href="/laporan" :active="request()->is('laporan')"><i class="fa fa-flag" aria-hidden="true"></i>Laporan</x-nav-link>
               </div>
             </div>
           </div>
@@ -74,10 +77,20 @@
       <div x-show="isOpen" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <x-nav-mob href="/beranda" :active="request()->is('beranda')">Beranda</x-mob-link>
-          <x-nav-mob href="/daftar surat" :active="request()->is('daftar surat','permintaan surat')">Permintaan Surat</x-mob-link>
-          <x-nav-mob href="/data iuran" :active="request()->is('data iuran','list iuran')">Data iuran</x-mob-link>
-          <x-nav-mob href="/laporan" :active="request()->is('laporan')">Laporan</x-mob-link>
+          
+          <x-nav-mob href="/beranda" :active="request()->is('beranda')">
+            <i class="fa fa-home" aria-hidden="true"></i> Beranda
+        </x-nav-mob>        
+        <x-nav-mob href="/daftar surat" :active="request()->is('daftar surat','permintaan surat')">
+          <i class="fa fa-file-text" aria-hidden="true"></i> Surat
+      </x-nav-mob>
+      <x-nav-mob href="/data iuran" :active="request()->is('data iuran','list iuran')">
+          <i class="fa fa-usd" aria-hidden="true"></i> Data Iuran
+      </x-nav-mob>
+      <x-nav-mob href="/laporan" :active="request()->is('laporan')">
+          <i class="fa fa-flag" aria-hidden="true"></i> Laporan
+      </x-nav-mob>
+      
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">
           <div class="flex items-center px-5">
